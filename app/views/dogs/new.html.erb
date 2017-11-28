@@ -1,0 +1,13 @@
+<h3>New dog?</h3>
+<%= simple_form_for([@user, @dog]) do |f| %>
+  <div class="form-inputs">
+    <%= f.input :name, class: "form-space"  %>
+    <%= f.input :age, class: "form-space"  %>
+    <%= f.input :vaccines, class: "form-space"  %>
+    <%= f.input :description, class: "form-space"  %>
+  </div>
+  <br>
+  <div class="form-actions">
+    <%= f.submit "add a dog", class: "btn btn-primary" %>
+  </div>
+<% end %>
