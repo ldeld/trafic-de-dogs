@@ -1,0 +1,32 @@
+.user-header {
+  padding:20px;
+  display:flex;
+  justify-content: space-between;
+  align-items: top;
+}
+
+.header-user-personal-info{
+  padding-left:10px;
+  min-width:100px;
+  text-align: left;
+  h3 {
+    font-size: 13px;
+
+  };
+  p{
+    font-size: 13px;
+    font-weight: lighter;
+    opacity: 0.6;
+    margin-top: 5px;
+  };
+}
+
+.header-user-site-info{
+  font-size: 14px;
+  font-weight: bold;
+}
+
+ul.inline li {
+  display: inline;
+  padding: 0 10px 0 10px ;
+}
