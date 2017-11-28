@@ -14,7 +14,7 @@ user = Sitter.create!(first_name: 'Kévin', last_name: 'Wagon', city: "lyon", em
 user = Sitter.create!(first_name: 'skdjfhs', last_name: 'Wagon', city: "lyon", email: 'sdfsd@gmail.com', password: 'topsecret', password_confirmation: 'topsecret')
 
 
-Dog.create!(user_id: 1, name: "doggo", age: 3, vaccines: "stuff", description: "blabla")
-Dog.create!(user_id: 2, name: "natadoggo", age: 11, vaccines: "yep", description: "very old but nice dog")
-Dog.create!(user_id: 3, name: "gabe", age: 75, vaccines: "no", description: "superdog supermeme")
-Dog.create!(user_id: 2, name: "babydog", age: 1, vaccines: "not yet", description: "pupper")
+Dog.create!(user_id: 1, name: "doggo", age: 3, vaccines: "stuff", description: "blabla", breed: "labrador")
+Dog.create!(user_id: 2, name: "natadoggo", age: 11, vaccines: "yep", description: "very old but nice dog", breed: "labrador")
+Dog.create!(user_id: 3, name: "gabe", age: 75, vaccines: "no", description: "superdog supermeme", breed: "caniche")
+Dog.create!(user_id: 2, name: "babydog", age: 1, vaccines: "not yet", description: "pupper", breed: "labrador")
