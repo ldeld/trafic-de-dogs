@@ -13,6 +13,5 @@ class UsersController < ApplicationController
 
   def find_user
     @user = User.find(params[:id])
-    @dogs = @user.dogs.all
   end
 end
