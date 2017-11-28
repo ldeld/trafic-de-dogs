@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# user = User.create!(first_name: 'John', last_name: 'Doe', city: "lyon", email: 'john@gmail.com', password: 'topsecret', password_confirmation: 'topsecret')
+user = User.create!(first_name: 'Léna', last_name: 'Wagon', city: "lyon", email: 'lena@gmail.com', password: 'topsecret', password_confirmation: 'topsecret', sitter: true)
+user = User.create!(first_name: 'Natacha', last_name: 'Wagon', city: "lyon", email: 'natacha@gmail.com', password: 'topsecret', password_confirmation: 'topsecret')
+user = User.create!(first_name: 'Lorenzo', last_name: 'Wagon', city: "lyon", email: 'lorenzo@gmail.com', password: 'topsecret', password_confirmation: 'topsecret', sitter: true)
+user = User.create!(first_name: 'Matthieu', last_name: 'Wagon', city: "lyon", email: 'matthieu@gmail.com', password: 'topsecret', password_confirmation: 'topsecret')
+user = User.create!(first_name: 'Kévin', last_name: 'Wagon', city: "lyon", email: 'kevin@gmail.com', password: 'topsecret', password_confirmation: 'topsecret', sitter: true)
+user = User.create!(first_name: 'skdjfhs', last_name: 'Wagon', city: "lyon", email: 'sdfsd@gmail.com', password: 'topsecret', password_confirmation: 'topsecret', sitter: true)
