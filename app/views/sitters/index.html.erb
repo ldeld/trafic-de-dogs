@@ -1,7 +1,7 @@
 <div class="main-container">
   <div class="flexbox">
     <!-- fix these lines so that the styling isnt in the html -->
-    <div class="cards" style="flex-grow: 1;">
+    <div class="cards">
       <div class="row" style="width: 100%">
         <% @sitters.each do |sitter| %>
           <div class="col-xs-12 col-sm-6 col-md-4">
@@ -13,7 +13,7 @@
                   <h2> <%= sitter.first_name %> </h2>
                 </div>
                 <img class="card-user avatar avatar-large" src="http://www.qygjxz.com/data/out/190/6179593-profile-pics.jpg">
-                <a class="card-link" href="#" ></a>
+                <%= link_to "", sitter_path(sitter), class: "card-link" %>
               </div>
             </div>
           </div>
