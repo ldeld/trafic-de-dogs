@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171127155554) do
+ActiveRecord::Schema.define(version: 20171128124347) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(version: 20171127155554) do
     t.string   "name"
     t.integer  "age"
     t.string   "vaccines"
-    t.text     "habitudes"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.text     "description"
     t.index ["user_id"], name: "index_dogs_on_user_id", using: :btree
   end
 
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20171127155554) do
     t.string   "accomodation"
     t.string   "description"
     t.boolean  "sitter",                 default: false
+    t.string   "type"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

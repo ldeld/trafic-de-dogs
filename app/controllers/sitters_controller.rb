@@ -1,7 +1,7 @@
 class SittersController < ApplicationController
   before_action :find_sitter, only: [:show]
   def index
-    @sitters = User.where(sitter: true)
+    @sitters = Sitter.all
   end
 
   def show
@@ -10,6 +10,6 @@ class SittersController < ApplicationController
   private
 
   def find_sitter
-    @sitter = User.find(params[:id])
+    @sitter = Sitter.find(params[:id])
   end
 end
