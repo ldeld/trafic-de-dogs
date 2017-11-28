@@ -1,1 +1,21 @@
 <!-- show booking form for this sitter -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <div class="card">
+        <h2><%= @sitter.first_name %></h2>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <div class="card">
+        <% p "------------------------------" %>
+        <% p user_signed_in? %>
+        <% @user = current_user %>
+        <%= simple_form_for [@sitter, @booking], url: "/sitters/#{@sitter.id}/bookings", method: :post do |f| %>
+        <%= f.button :submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
