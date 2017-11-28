@@ -1,0 +1,1 @@
+# show, edit , update, destroy
