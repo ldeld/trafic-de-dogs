@@ -2,7 +2,7 @@
 # TODO :
 # index, show, new, create, edit update, destroy
 
-class PagesController < ApplicationController
+class DogsController < ApplicationController
 
   before_action :set_user, only: [:index, :new, :create, :destroy]
   before_action :set_dog, only: [:show, :edit, :update, :destroy]
@@ -51,7 +51,7 @@ class PagesController < ApplicationController
   end
 
   def dog_params
-    params.require(:dog).permit(:description, :ingredient_id)
+    params.require(:dog).permit(:name, :age, :vaccines, :description)
   end
 
 end

@@ -14,13 +14,13 @@
 # user = User.create!(first_name: 'Kévin', last_name: 'Wagon', city: "lyon", email: 'kevin@gmail.com', password: 'topsecret', password_confirmation: 'topsecret', sitter: true)
 # user = User.create!(first_name: 'skdjfhs', last_name: 'Wagon', city: "lyon", email: 'sdfsd@gmail.com', password: 'topsecret', password_confirmation: 'topsecret', sitter: true)
 
-Dog.create!(user_id: 7, name: "doggo", age: 3, vaccines: "stuff", description: "blabla")
-Dog.create!(user_id: 8, name: "natadoggo", age: 11, vaccines: "yep", description: "very old but nice dog")
-Dog.create!(user_id: 9, name: "gabe", age: 75, vaccines: "no", description: "superdog supermeme")
-Dog.create!(user_id: 8, name: "babydog", age: 1, vaccines: "not yet", description: "pupper")
+Dog.create!(user_id: 11, name: "doggo", age: 3, vaccines: "stuff", description: "blabla")
+Dog.create!(user_id: 12, name: "natadoggo", age: 11, vaccines: "yep", description: "very old but nice dog")
+Dog.create!(user_id: 13, name: "gabe", age: 75, vaccines: "no", description: "superdog supermeme")
+Dog.create!(user_id: 12, name: "babydog", age: 1, vaccines: "not yet", description: "pupper")
 
 
-# user = Sitter.create!(first_name: 'Léna', last_name: 'Wagon', city: "lyon", email: 'lena@gmail.com', password: 'topsecret', password_confirmation: 'topsecret')
-# user = Sitter.create!(first_name: 'Lorenzo', last_name: 'Wagon', city: "lyon", email: 'lorenzo@gmail.com', password: 'topsecret', password_confirmation: 'topsecret')
-# user = Sitter.create!(first_name: 'Kévin', last_name: 'Wagon', city: "lyon", email: 'kevin@gmail.com', password: 'topsecret', password_confirmation: 'topsecret')
-# user = Sitter.create!(first_name: 'skdjfhs', last_name: 'Wagon', city: "lyon", email: 'sdfsd@gmail.com', password: 'topsecret', password_confirmation: 'topsecret')
+# user = User.create!(first_name: 'Léna', last_name: 'Wagon', city: "lyon", email: 'lena@gmail.com', password: 'topsecret', password_confirmation: 'topsecret')
+# user = User.create!(first_name: 'Lorenzo', last_name: 'Wagon', city: "lyon", email: 'lorenzo@gmail.com', password: 'topsecret', password_confirmation: 'topsecret')
+# user = User.create!(first_name: 'Kévin', last_name: 'Wagon', city: "lyon", email: 'kevin@gmail.com', password: 'topsecret', password_confirmation: 'topsecret')
+# user = User.create!(first_name: 'skdjfhs', last_name: 'Wagon', city: "lyon", email: 'sdfsd@gmail.com', password: 'topsecret', password_confirmation: 'topsecret')

@@ -1,8 +1,10 @@
 <h3>New dog?</h3>
 <%= simple_form_for([@user, @dog]) do |f| %>
   <div class="form-inputs">
-    <%= f.collection_select :ingredient_id, Ingredient.order(:name),:id,:name, include_blank: false %><br/>
-    <%= f.input :description, label: "Quantity", class: "form-space"  %>
+    <%= f.input :name, class: "form-space"  %>
+    <%= f.input :age, class: "form-space"  %>
+    <%= f.input :vaccines, class: "form-space"  %>
+    <%= f.input :description, class: "form-space"  %>
   </div>
   <br>
   <div class="form-actions">
