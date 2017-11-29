@@ -87,12 +87,9 @@ GEM
     geocoder (1.4.4)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-
+    gmaps4rails (2.1.2)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
-
-    gmaps4rails (2.1.2)
-
     i18n (0.9.1)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
@@ -227,12 +224,9 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootstrap-sass
-
   carrierwave (~> 0.11.2)
   cloudinary
-
   coffee-rails
-
   devise
   figaro
   font-awesome-sass
