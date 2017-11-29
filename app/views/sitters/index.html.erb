@@ -8,7 +8,7 @@
             <div class="card">
               <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
                            url('<%= image_path 'https://static3.shop033.com/resources/18/160536/picture/2E/85135150.jpg', height: 180, width: 370, crop: :fill %>')">
-                <span class="card-category"><%= sitter.address %></span>
+                <span class="card-category"><%= sitter.city.upcase %></span>
                 <div class="card-title">
                   <h2> <%= sitter.first_name %> </h2>
                 </div>
