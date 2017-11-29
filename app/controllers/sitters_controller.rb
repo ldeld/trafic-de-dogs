@@ -1,8 +1,6 @@
 class SittersController < ApplicationController
   before_action :find_sitter, only: [:show]
   def index
-    p "eeeee"
-    p current_user
     @sitters = Sitter.near(params[:city], 10)
 
     @markers = Gmaps4rails.build_markers(@sitters) do |sitter, marker|
