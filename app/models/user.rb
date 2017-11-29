@@ -5,6 +5,8 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :address, presence: true
 
+  mount_uploader :photo, PhotoUploader
+
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
   # Include default devise modules. Others available are:

@@ -5,4 +5,6 @@ class Dog < ApplicationRecord
   validates :age, presence: true
   validates :vaccines, presence: true
   validates :description, presence: true
+
+  mount_uploader :photo, PhotoUploader
 end
