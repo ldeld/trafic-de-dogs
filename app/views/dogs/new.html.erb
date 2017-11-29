@@ -2,6 +2,8 @@
 <%= simple_form_for([@user, @dog]) do |f| %>
   <div class="form-inputs">
     <%= f.input :name, class: "form-space"  %>
+    <%= f.input :photo, class: "form-space"  %>
+    <%= f.input :photo_cache, as: :hidden %>
     <%= f.input :age, class: "form-space"  %>
     <%= f.input :breed, class: "form-space"  %>
     <%= f.input :vaccines, class: "form-space"  %>

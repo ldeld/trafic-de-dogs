@@ -2,13 +2,15 @@
   <h2>Edit your profile</h2>
   <%= simple_form_for(@user) do |f| %>
   <div class="form-inputs">
+      <%= f.input :photo, class: "form-space"  %>
+      <%= f.input :photo_cache, as: :hidden %>
       <%= f.input :address, class: "form-space"  %>
       <%= f.input :accomodation, class: "form-space"  %>
       <%= f.text_area :description, class: "form-control"  %>
     </div>
     <br>
     <div class="form-actions">
-      <%= f.submit "edit", class: "btn btn-primary" %>
+      <%= f.submit "Edit", class: "btn btn-primary" %>
     </div>
   <% end %>
 </div>
