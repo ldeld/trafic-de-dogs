@@ -8,7 +8,7 @@
             <div class="card">
               <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
                            url('<%= image_path 'https://static3.shop033.com/resources/18/160536/picture/2E/85135150.jpg', height: 180, width: 370, crop: :fill %>')">
-                <span class="card-category"><%= sitter.city %></span>
+                <span class="card-category"><%= sitter.address %></span>
                 <div class="card-title">
                   <h2> <%= sitter.first_name %> </h2>
                 </div>
@@ -24,7 +24,7 @@
   </div>
 </div>
 
-  <script>
+<!--   <script>
       function initMap() {
         var uluru = {lat: -25.363, lng: 131.044};
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -40,5 +40,20 @@
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvkGVkL4xF6Dpw4JzrVRoZzaF8UMYx5YE&callback=initMap">
-  </script>
+  </script> -->
 
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    var handler = Gmaps.build('Google');
+    handler.buildMap({ internal: { id: 'map' } }, function() {
+      markers = handler.addMarkers(<%= raw @markers.to_json %>);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+      if (markers.length == 0) {
+        handler.getMap().setZoom(2);
+      } else if (markers.length == 1) {
+        handler.getMap().setZoom(14);
+      }
+    });
+  <% end %>
+<% end %>
