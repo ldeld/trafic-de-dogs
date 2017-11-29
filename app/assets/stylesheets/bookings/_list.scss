@@ -33,15 +33,64 @@
   border-bottom:1px solid #eeeeee;
 }
 
-.message-avatar {
-  height:50px;
-  border-radius: 50%;
-}
-
-.message-body{
+.message-name{
   padding-left:20px;
   padding-bottom:20px;
-  min-width: 150px;
+  min-width: 100px;
+  h3{
+    font-size: 13px;
+    line-height:9px;
+    margin-bottom: 0px;
+  };
+  p{
+    color:#777;
+    font-size: 13px;
+    font-weight: lighter;
+    line-height:7px;
+    opacity: 0.6;
+  };
+}
+
+.message-dates{
+  padding-left:20px;
+  padding-bottom:20px;
+  min-width: 160px;
+  h3{
+    font-size: 13px;
+    line-height:9px;
+    margin-bottom: 0px;
+  };
+  p{
+    color:#777;
+    font-size: 13px;
+    font-weight: lighter;
+    line-height:7px;
+    opacity: 0.6;
+  };
+}
+
+.message-dog{
+  padding-left:20px;
+  padding-bottom:20px;
+  min-width: 100px;
+  h3{
+    font-size: 13px;
+    line-height:9px;
+    margin-bottom: 0px;
+  };
+  p{
+    color:#777;
+    font-size: 13px;
+    font-weight: lighter;
+    line-height:7px;
+    opacity: 0.6;
+  };
+}
+
+.message-price{
+  padding-left:20px;
+  padding-bottom:20px;
+  min-width: 50px;
   h3{
     font-size: 13px;
     line-height:9px;
