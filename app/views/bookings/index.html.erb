@@ -1,13 +1,26 @@
 <h2>Hi, <%= current_user.first_name %></h2>
 
-<h3>These are your bookings : </h3>
+<div class="container">
 
+<h3>These are your bookings</h3>
 
-<ul>
-<% @bookings.each do |booking| %>
-  <li>
-    <h4> <%= booking.sitter.first_name %> </h4>
-    <p> <%= booking.start_date %> to <%= booking.start_date %> </p>
-  </li>
-<% end %>
+<div class="tabs">
+        <a href="#" class="tab active">Consommateurs</a>
+        <a href="#" class="tab">Dealers</a>
+      </div>
+<ul class="inbox">
+  <% @bookings.each do |booking| %>
+  <li class="message">
+          <img src="http://www.femalefirst.co.uk/image-library/square/500/d/dave-franco---wi07-13.jpg" class="avatar message-avatar">
+          <div class="message-name"><h3><%= booking.sitter.first_name %></h3>
+          </div>
+          <div class="message-body"><h3>From <%= booking.start_date %></h3>
+          <h3>To <%= booking.end_date %></h3></div>
+          <img src="http://www.shibainupup.com/wp-content/uploads/awpcp/thumbs/img_20170528_141457-83a3d553-primary.jpg" class="avatar message-avatar">
+          <div class="message-name"><h3><%= Dog.where(owner_id: current_user.id).name %></h3>
+          </div>
+          <div class="message-body"><h3>8€</h3></div>
+          <div class="message-status"><p class="accepted">Pending</p></div>
+        </li>
+  <% end %>
 </ul>

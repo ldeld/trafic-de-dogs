@@ -1,0 +1,96 @@
+.tabs {
+  font-weight: bold;
+  font-size:18px;
+  padding-top:10px;
+}
+
+.tab {
+  padding: 10px 10px 10px 5px;
+  color:#c8c8c8;
+  text-decoration: none;
+}
+
+.tab:hover{
+  color:black;
+}
+
+.active {
+  padding: 10px 10px 10px 10px;
+  color:black;
+  border-bottom: 5px solid #48A399;
+}
+
+.inbox {
+  padding: 0px 20px 0px 20px;
+  list-style: none;
+  border:1px solid #dce0e0;
+}
+.message {
+  padding:20px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom:1px solid #eeeeee;
+}
+
+.message-avatar {
+  height:50px;
+  border-radius: 50%;
+}
+
+.message-name{
+  padding-left:10px;
+  min-width:100px;
+}
+
+.message-name h3{
+  font-size: 13px;
+  margin-bottom: 0px;
+}
+
+.message-name p{
+  font-size: 13px;
+  font-weight: lighter;
+  opacity: 0.6;
+  margin-top: 5px;
+}
+
+.message-body{
+  padding-left:20px;
+  flex-grow:1;
+}
+
+.message-body h3{
+  font-size: 13px;
+  line-height:9px;
+  margin-bottom: 0px;
+}
+
+.message-body p{
+  color:#777;
+  font-size: 13px;
+  font-weight: lighter;
+  line-height:7px;
+  opacity: 0.6;
+}
+
+.message-status{
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.done{
+  color:#D3D3D3;
+}
+
+.accepted{
+  color:green;
+}
+
+.declined{
+  color:red;
+}
+
+.message:last-child {
+  border-bottom:none;
+}
