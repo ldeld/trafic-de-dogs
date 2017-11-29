@@ -1,7 +1,13 @@
 class SittersController < ApplicationController
   before_action :find_sitter, only: [:show]
   def index
-    @sitters = Sitter.all
+    @sitters = Sitter.where.not(latitude: nil, longitude: nil)
+
+    @markers = Gmaps4rails.build_markers(@sitters) do |sitter, marker|
+      marker.lat sitter.latitude
+      marker.lng sitter.longitude
+      marker.infowindow render_to_string(partial: "/sitters/map_box", locals: { sitter: sitter })
+    end
   end
 
   def show
