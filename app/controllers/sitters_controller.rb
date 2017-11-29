@@ -20,6 +20,4 @@ class SittersController < ApplicationController
     @sitter = Sitter.find(params[:id])
   end
 
-  def current_user
-  end
 end
