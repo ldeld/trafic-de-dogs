@@ -3,17 +3,21 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-6">
-      <div class="card">
+      <div class="sitter-card sitter-info">
+        <img src="https://api.adorable.io/avatars/167/acv@adorable.io.png" class="avatar-large">
         <h2><%= @sitter.first_name %></h2>
+        <p> <%= @sitter.description %></p>
       </div>
     </div>
     <div class="col-xs-12 col-md-6">
-      <div class="card">
-        <% p "------------------------------" %>
-        <% p user_signed_in? %>
-        <% @user = current_user %>
+      <div class="sitter-card sitter-booking">
+        <h2>Price:</h2>
+        <p> Walk: <strong>8€</strong> </p>
+        <p> Day care: <strong>20€</strong> </p>
+        <p> Overnight stay: <strong>30€</strong> </p>
+
         <%= simple_form_for [@sitter, @booking], url: "/sitters/#{@sitter.id}/bookings", method: :post do |f| %>
-        <%= f.button :submit %>
+        <%= f.button :submit, 'Book this sitter', class: "btn btn-primary" %>
         <% end %>
       </div>
     </div>
