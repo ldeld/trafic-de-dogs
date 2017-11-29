@@ -1,26 +1,36 @@
-<h2>Hi, <%= current_user.first_name %></h2>
+<h2>Hi, <%= current_user.first_name%>!</h2>
 
 <div class="container">
-
-<h3>These are your bookings</h3>
-
-<div class="tabs">
-        <a href="#" class="tab active">Consommateurs</a>
-        <a href="#" class="tab">Dealers</a>
-      </div>
-<ul class="inbox">
-  <% @bookings.each do |booking| %>
-  <li class="message">
-          <img src="http://www.femalefirst.co.uk/image-library/square/500/d/dave-franco---wi07-13.jpg" class="avatar message-avatar">
-          <div class="message-name"><h3><%= booking.sitter.first_name %></h3>
+  <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+    <h4>Here are your bookings:</h4>
+    <div class="tabs">
+      <a href="#" class="tab active">Sitters</a>
+      <a href="#" class="tab">Owners</a>
+    </div>
+    <ul class="inbox">
+      <% @bookings.each do |booking| %>
+        <li class="message">
+          <img src="http://www.femalefirst.co.uk/image-library/square/500/d/dave-franco---wi07-13.jpg" class="avatar">
+          <div class="message-name">
+            <h3><%= booking.sitter.first_name %></h3>
           </div>
-          <div class="message-body"><h3>From <%= booking.start_date %></h3>
-          <h3>To <%= booking.end_date %></h3></div>
-          <img src="http://www.shibainupup.com/wp-content/uploads/awpcp/thumbs/img_20170528_141457-83a3d553-primary.jpg" class="avatar message-avatar">
-          <div class="message-name"><h3><%= Dog.where(owner_id: current_user.id).name %></h3>
+          <div class="message-dates">
+            <h3>From <%= booking.start_date %></h3>
+            <h3>To <%= booking.end_date %></h3>
           </div>
-          <div class="message-body"><h3>8€</h3></div>
-          <div class="message-status"><p class="accepted">Pending</p></div>
+          <img src="http://www.shibainupup.com/wp-content/uploads/awpcp/thumbs/img_20170528_141457-83a3d553-primary.jpg" class="avatar">
+          <div class="message-dog">
+            <h3><%= Dog.where(owner_id: current_user.id).name %></h3>
+          </div>
+          <div class="message-price"><h3>8€</h3></div>
+          <div class="message-status">
+          <% if booking.end_date.future? %>
+            <p class="accepted">To come</p>
+          <% else %>
+            <p class="done">Done</p></div>
+          <% end %>
         </li>
-  <% end %>
-</ul>
+      <% end %>
+    </ul>
+  </div>
+</div>
