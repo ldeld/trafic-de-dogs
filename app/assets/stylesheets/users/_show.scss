@@ -18,6 +18,7 @@
   background-color: white;
   align-items: center;
   margin-top: 20px;
+  padding: 20px;
 }
 
 .avatar-large {
@@ -39,14 +40,18 @@
   padding-right: 10px;
 }
 
+
 .show-dogs {
   margin-bottom: 20px;
   margin-top: 20px;
   display: flex;
   align-items: center;
+  width: 800px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-.avatar{
+.img-review{
   margin-left: 60px;
   width: 70px;
   height: 70px;

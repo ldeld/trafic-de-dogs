@@ -9,7 +9,7 @@
 
     <div class="col-xs-3 col-sm-6">
     <div class="description-user">
-    <h3 class="user-name">Bonjour, je m'appelle Manon !</h3>
+    <h4 class="user-name">Bonjour, je m'appelle <%= @user.first_name %> !</h4>
 
     <div class="rating">
             <i class="fa fa-star"></i>
@@ -19,7 +19,7 @@
             <i class="fa fa-star"></i>
     </div>
 
-    <p> Lyon 69002</p>
+    <p><%= @user.city %></p>
     <p> Membre depuis 2017</p>
     </div>
   </div>
@@ -28,11 +28,11 @@
 
   <div class="box-description">
     <div class="row">
-      <h5 class="header-description"> A propos de Manon </h5>
+      <h5 class="header-description"> A propos de <%= @user.first_name %>  </h5>
     </div>
     <div class="row">
-      <p class="description"> Description de Manon. Blabla blabla.
-        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+      <p class="description">
+        <%= @user.description %>
       </p>
     </div>
   </div>
@@ -41,26 +41,18 @@
 
   <div class="row">
     <div class="show-dogs">
+      <% @user.dogs.each do |dog| %>
       <div class="col-xs-3 col-sm-2">
-        <%= image_tag "http://www.shibainupup.com/wp-content/uploads/awpcp/thumbs/img_20170528_141457-83a3d553-primary.jpg", :class =>"avatar"  %>
+        <%= image_tag "http://www.shibainupup.com/wp-content/uploads/awpcp/thumbs/img_20170528_141457-83a3d553-primary.jpg", height: 80, width: 80, crop: :thumb, gravity: :face %>
       </div>
       <div class="col-xs-3 col-sm-6">
         <div class="description-dog">
-          <h4> Toutou </h4>
-          <p> Corgi </p>
-          <p> 2 ans </p>
+          <h4><%= dog.name %></h4>
+          <p><%= dog.breed %></p>
+          <p><%= dog.age %> ans </p>
         </div>
       </div>
-      <div class="col-xs-3 col-sm-2">
-        <%= image_tag "http://www.shibainupup.com/wp-content/uploads/awpcp/thumbs/img_20170528_141457-83a3d553-primary.jpg", :class =>"avatar" %>
-      </div>
-      <div class="col-xs-3 col-sm-6">
-        <div class="description-dog">
-          <h4> Fifou </h4>
-          <p> Labrador </p>
-          <p> 3 ans </p>
-        </div>
-      </div>
+      <% end %>
     </div>
   </div>
 <div class="border"></div>
@@ -70,12 +62,12 @@
   <div class="row">
     <div class="review-user">
       <div class="col-xs-3 col-sm-3">
-        <img src="http://www.femalefirst.co.uk/image-library/square/500/d/dave-franco---wi07-13.jpg" class="avatar">
+        <img src="http://www.femalefirst.co.uk/image-library/square/500/d/dave-franco---wi07-13.jpg" class="img-review"">
         <p class="name-review">Jules</p>
       </div>
       <div class="col-xs-3 col-sm-6">
         <div class="description-user">
-          <p>Merci à vous, Clotilde ! Toutou a été super mignon :-)</p>
+          <p>Merci à vous, <%= @user.first_name %> ! Votre chien a été super mignon :-)</p>
         </div>
       </div>
     </div>
@@ -83,12 +75,12 @@
   <div class="row">
     <div class="review-user">
       <div class="col-xs-3 col-sm-3">
-        <img src="http://www.femalefirst.co.uk/image-library/square/500/d/dave-franco---wi07-13.jpg" class="avatar">
+        <img src="http://www.femalefirst.co.uk/image-library/square/500/d/dave-franco---wi07-13.jpg" class="img-review">
         <p class="name-review">Erica</p>
       </div>
       <div class="col-xs-3 col-sm-6">
         <div class="description-user">
-          <p>Fifou est un amour et s'en occuper a été un grand plaisir !</p>
+          <p>Votre chien est un amour et s'en occuper a été un grand plaisir !</p>
         </div>
       </div>
     </div>
