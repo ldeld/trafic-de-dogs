@@ -6,12 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user = User.create!(first_name: 'Matthieu', last_name: 'Wagon', city: "lyon", email: 'matthieu@gmail.com', password: 'topsecret', password_confirmation: 'topsecret')
-user = User.create!(first_name: 'Natacha', last_name: 'Wagon', city: "lyon", email: 'natacha@gmail.com', password: 'topsecret', password_confirmation: 'topsecret')
-user = Sitter.create!(first_name: 'Léna', last_name: 'Wagon', city: "lyon", email: 'lena@gmail.com', password: 'topsecret', password_confirmation: 'topsecret')
-user = Sitter.create!(first_name: 'Lorenzo', last_name: 'Wagon', city: "lyon", email: 'lorenzo@gmail.com', password: 'topsecret', password_confirmation: 'topsecret')
-user = Sitter.create!(first_name: 'Kévin', last_name: 'Wagon', city: "lyon", email: 'kevin@gmail.com', password: 'topsecret', password_confirmation: 'topsecret')
-user = Sitter.create!(first_name: 'skdjfhs', last_name: 'Wagon', city: "lyon", email: 'sdfsd@gmail.com', password: 'topsecret', password_confirmation: 'topsecret')
+user = User.create!(first_name: 'Matthieu', last_name: 'Wagon', city: "lyon", email: 'matthieu@gmail.com', password: 'topsecret', password_confirmation: 'topsecret', description: "Coucou c'est matthieu. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolorem minus maxime temporibus sint, ut maiores placeat quasi sequi quod repellat illum alias harum voluptate quas veritatis dolore suscipit doloribus?")
+user = User.create!(first_name: 'Natacha', last_name: 'Wagon', city: "lyon", email: 'natacha@gmail.com', password: 'topsecret', password_confirmation: 'topsecret', description: "Coucou c'est natacha. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolorem minus maxime temporibus sint, ut maiores placeat quasi sequi quod repellat illum alias harum voluptate quas veritatis dolore suscipit doloribus?")
+user = Sitter.create!(first_name: 'Léna', last_name: 'Wagon', city: "lyon", email: 'lena@gmail.com', password: 'topsecret', password_confirmation: 'topsecret', description: "Coucou c'est lena. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolorem minus maxime temporibus sint, ut maiores placeat quasi sequi quod repellat illum alias harum voluptate quas veritatis dolore suscipit doloribus?")
+user = Sitter.create!(first_name: 'Lorenzo', last_name: 'Wagon', city: "lyon", email: 'lorenzo@gmail.com', password: 'topsecret', password_confirmation: 'topsecret', description: "Coucou c'est lorenzo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolorem minus maxime temporibus sint, ut maiores placeat quasi sequi quod repellat illum alias harum voluptate quas veritatis dolore suscipit doloribus?")
+user = Sitter.create!(first_name: 'Kévin', last_name: 'Wagon', city: "lyon", email: 'kevin@gmail.com', password: 'topsecret', password_confirmation: 'topsecret', description: "Coucou c'est kevin. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolorem minus maxime temporibus sint, ut maiores placeat quasi sequi quod repellat illum alias harum voluptate quas veritatis dolore suscipit doloribus?")
+user = Sitter.create!(first_name: 'skdjfhs', last_name: 'Wagon', city: "lyon", email: 'sdfsd@gmail.com', password: 'topsecret', password_confirmation: 'topsecret', description: "Coucou c'est sdfsd. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolorem minus maxime temporibus sint, ut maiores placeat quasi sequi quod repellat illum alias harum voluptate quas veritatis dolore suscipit doloribus?")
 
 
 Dog.create!(user_id: 1, name: "doggo", age: 3, vaccines: "stuff", description: "blabla", breed: "labrador")

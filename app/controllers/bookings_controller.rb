@@ -1,8 +1,8 @@
 class BookingsController < ApplicationController
-  before_action :find_user
+  # before_action :find_user, except: [:create]
 
   def index
-    @bookings = @user.bookings
+    @bookings = Booking.where(owner_id: current_user.id)
   end
 
   def new
@@ -10,9 +10,9 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = @user.bookings.new(booking_params)
+    @booking = Booking.new(sitter_id: params[:sitter_id], owner_id: current_user.id, start_date: Date.parse("2017-12-30"), end_date: Date.parse("2017-12-31") )
     if @booking.save
-      redirect_to user_path(@user)
+      redirect_to bookings_path
     else
       render :new
     end
@@ -24,10 +24,10 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:owner_id, :sitter_id)
+    params.require(:booking).permit(:sitter_id)
   end
 
-  def find_user
-    @user = User.find(params[:id])
-  end
+  # def find_user
+  #   @user = User.find(params[:id])
+  # end
 end

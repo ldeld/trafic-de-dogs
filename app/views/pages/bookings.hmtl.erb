@@ -1,0 +1,13 @@
+<h2>Hi, <%= current_user.first_name %></h2>
+
+<h3>These are your bookings : </h3>
+
+
+<ul>
+<% @bookings.each do |booking| %>
+  <li>
+    <h4> <%= booking.sitter.first_name %> </h4>
+    <p> <%= booking.start_date %> to <%= booking.start_date %> </p>
+  </li>
+<% end %>
+</ul>
