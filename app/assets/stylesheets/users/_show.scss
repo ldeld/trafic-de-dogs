@@ -1,0 +1,76 @@
+
+.container-user {
+  width: 900px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.border {
+  border-bottom: 2px solid #dddddd;
+      padding: 10px;
+    margin: 10px;
+    margin-left: 20px;
+    margin-right: 50px;
+}
+
+.header-show {
+  display: flex;
+  background-color: white;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.avatar-large {
+  margin-left: 20px;
+}
+
+.box-description {
+  margin-top: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.header-description {
+  font-weight: bolder;
+}
+
+.description {
+  padding-left: 30px;
+  padding-right: 10px;
+}
+
+.show-dogs {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.avatar{
+  margin-left: 60px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.description-dog {
+  margin: -4px;
+  line-height: 80%;
+}
+
+.reviews-users {
+  margin: 20px;
+  margin-top: 30px;
+}
+
+.review-user{
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.name-review {
+  text-align: center;
+}
+
+
