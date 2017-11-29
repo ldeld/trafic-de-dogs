@@ -4,7 +4,7 @@
   <div class="row" >
     <div class= "header-show">
     <div class="col-xs-3 col-sm-3">
-    <img src="https://a0.muscache.com/im/users/802361/profile_pic/1349136107/original.jpg?aki_policy=profile_x_medium" class="avatar-large" >
+    <%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill, gravity: :face %>
     </div>
 
     <div class="col-xs-3 col-sm-6">
@@ -43,7 +43,7 @@
     <div class="show-dogs">
       <% @user.dogs.each do |dog| %>
       <div class="col-xs-3 col-sm-2">
-        <%= image_tag "http://www.shibainupup.com/wp-content/uploads/awpcp/thumbs/img_20170528_141457-83a3d553-primary.jpg", height: 80, width: 80, crop: :thumb, gravity: :face %>
+        <%= cl_image_tag @dog.photo, height: 80, width: 80, crop: :thumb, gravity: :face %>
       </div>
       <div class="col-xs-3 col-sm-6">
         <div class="description-dog">
