@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171129132255) do
+ActiveRecord::Schema.define(version: 20171130140250) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "book_dogs", force: :cascade do |t|
+    t.integer  "dog_id"
+    t.integer  "booking_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_book_dogs_on_booking_id", using: :btree
+    t.index ["dog_id"], name: "index_book_dogs_on_dog_id", using: :btree
+  end
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "owner_id"
@@ -60,11 +69,13 @@ ActiveRecord::Schema.define(version: 20171129132255) do
     t.string   "type"
     t.float    "latitude"
     t.float    "longitude"
-    t.string   "city"
     t.string   "photo"
+    t.string   "city"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "book_dogs", "bookings"
+  add_foreign_key "book_dogs", "dogs"
   add_foreign_key "dogs", "users"
 end
