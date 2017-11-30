@@ -10,15 +10,8 @@ class UsersController < ApplicationController
   def show
   end
 
-  # def edit
-  #   @user = current_user
-  # end
-
-  # def update
-  #   @user = current_user
-  #   @user.update_attributes(user_params)
-  #   redirect_to user_path(@user)
-  # end
+  def profile
+  end
 
   private
 
