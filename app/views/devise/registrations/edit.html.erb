@@ -26,7 +26,7 @@
 
             <%= f.input :accomodation, required: true, class: "form-space" %>
 
-            <%= f.text_area :description, required: true, class: "form-control" %>
+            <%= f.text_area :description, label: 'hello', required: true, class: "form-control" %>
 
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
               <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
