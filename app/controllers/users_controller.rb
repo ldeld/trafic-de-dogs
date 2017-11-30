@@ -8,7 +8,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @dogs = @user.dogs.all
   end
 
   def edit

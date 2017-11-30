@@ -43,7 +43,7 @@
     <div class="show-dogs">
       <% @user.dogs.each do |dog| %>
       <div class="col-xs-3 col-sm-2">
-        <%= cl_image_tag @dog.photo, height: 80, width: 80, crop: :thumb, gravity: :face %>
+        <%= cl_image_tag dog.photo, height: 80, width: 80, crop: :thumb, gravity: :face %>
       </div>
       <div class="col-xs-3 col-sm-6">
         <div class="description-dog">
