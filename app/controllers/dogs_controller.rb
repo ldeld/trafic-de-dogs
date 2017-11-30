@@ -4,7 +4,7 @@
 
 class DogsController < ApplicationController
 
-  before_action :set_user, only: [:index, :new, :create, :destroy]
+  before_action :set_user, only: [:index, :destroy]
   before_action :set_dog, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -19,9 +19,9 @@ class DogsController < ApplicationController
   end
 
   def create
-    @dog = @user.dogs.new(dog_params)
+    @dog = current_user.dogs.new(dog_params)
     if @dog.save
-      redirect_to user_path(@user)
+      redirect_to profile_path
     else
       render :new
     end

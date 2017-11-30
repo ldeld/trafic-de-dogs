@@ -10,15 +10,14 @@ class UsersController < ApplicationController
   def show
   end
 
-  # def edit
-  #   @user = current_user
-  # end
+  def profile
+  end
 
-  # def update
-  #   @user = current_user
-  #   @user.update_attributes(user_params)
-  #   redirect_to user_path(@user)
-  # end
+  def become_sitter
+    current_user.becomes! Sitter
+    current_user.save
+    redirect_to profile_path
+  end
 
   private
 
