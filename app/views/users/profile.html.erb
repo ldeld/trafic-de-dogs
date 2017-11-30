@@ -13,21 +13,23 @@
 
 <h3> Your dogs: </h3>
 
-<div class="row">
-  <div class="show-dogs">
-    <% current_user.dogs.each do |dog| %>
-    <div class="col-xs-3 col-sm-2">
-      <%= cl_image_tag dog.photo, height: 80, width: 80, crop: :thumb, gravity: :face %>
-    </div>
-    <%= link_to "Edit #{dog.name}'s profile", edit_dog_path(dog), class: "btn btn-primary" %>
-    <div class="col-xs-3 col-sm-6">
-      <div class="description-dog">
-        <h4><%= dog.name %></h4>
-        <p><%= dog.breed %></p>
-        <p><%= dog.age %> ans </p>
+<div class="container">
+  <div class="row">
+    <div class="show-dogs">
+      <% current_user.dogs.each do |dog| %>
+      <div class="col-xs-3 col-sm-2">
+        <%= cl_image_tag dog.photo, height: 80, width: 80, crop: :thumb, gravity: :face %>
       </div>
+      <div class="col-xs-3 col-sm-6">
+        <div class="description-dog">
+          <h4><%= dog.name %></h4>
+          <p><%= dog.breed %></p>
+          <p><%= dog.age %> ans </p>
+      <%= link_to "Edit #{dog.name}'s profile", edit_dog_path(dog), class: "btn btn-primary" %>
+        </div>
+      </div>
+      <% end %>
     </div>
-    <% end %>
+    <%= link_to "Add a dog", new_dog_path, class: "btn btn-primary" %>
   </div>
-  <%= link_to "Add a dog", new_dog_path, class: "btn btn-primary" %>
 </div>
