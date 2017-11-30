@@ -1,0 +1,46 @@
+
+
+.left-button{
+  margin-left: 90px;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.description-sitter {
+  text-align: center;
+}
+
+.avatar-bordered {
+  width: 80px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
+}
+
+.sitter-body {
+  font-size: 12px;
+  text-align: center;
+}
+
+.profile-dogs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 60px;
+  padding: 20px;
+  margin-bottom: -9px;
+}
+
+.btn-dog {
+  font-size: 10px;
+}
+
+.description-dog{
+  justify-content: space-around;
+}
