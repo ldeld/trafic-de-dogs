@@ -15,10 +15,10 @@ user = Sitter.create!(first_name: 'Kévin', last_name: 'Wagon', address: "103, a
 user = Sitter.create!(first_name: 'Pablo', last_name: 'Wagon', address: "lyon", city: "lyon", email: 'sdfsd@gmail.com', password: 'topsecret', password_confirmation: 'topsecret', description: "Coucou c'est sdfsd. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolorem minus maxime temporibus sint, ut maiores placeat quasi sequi quod repellat illum alias harum voluptate quas veritatis dolore suscipit doloribus?", photo: "mgwzfwiq4tbi0a52lwht")
 
 
-Dog.create!(user_id: 1, name: "doggo", age: 3, vaccines: "stuff", description: "blabla", breed: "labrador", photo: "dog1_jg64af.jpg")
-Dog.create!(user_id: 2, name: "natadoggo", age: 11, vaccines: "yep", description: "very old but nice dog", breed: "labrador", photo: "dog1_jg64af.jpg")
-Dog.create!(user_id: 3, name: "gabe", age: 75, vaccines: "no", description: "superdog supermeme", breed: "caniche", photo: "dog1_jg64af.jpg")
-Dog.create!(user_id: 2, name: "babydog", age: 1, vaccines: "not yet", description: "pupper", breed: "labrador", photo: "dog1_jg64af.jpg")
+Dog.create!(user_id: 1, name: "doggo", age: 3, vaccines: "stuff", description: "blabla", breed: "labrador", photo: "dog1_jg64af")
+Dog.create!(user_id: 2, name: "natadoggo", age: 11, vaccines: "yep", description: "very old but nice dog", breed: "labrador", photo: "dog1_jg64af")
+Dog.create!(user_id: 3, name: "gabe", age: 75, vaccines: "no", description: "superdog supermeme", breed: "caniche", photo: "dog1_jg64af")
+Dog.create!(user_id: 2, name: "babydog", age: 1, vaccines: "not yet", description: "pupper", breed: "labrador", photo: "dog1_jg64af")
 
 Booking.create!(owner_id: 2, sitter_id: 3, start_date: Date.strptime("14/07/2018", "%d/%m/%Y"), end_date: Date.strptime("15/07/2018", "%d/%m/%Y"))
 Booking.create!(owner_id: 2, sitter_id: 4, start_date: Date.strptime("12/06/2018", "%d/%m/%Y"), end_date: Date.strptime("13/06/2018", "%d/%m/%Y"))
