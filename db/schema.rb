@@ -12,10 +12,8 @@
 
 ActiveRecord::Schema.define(version: 20171130151317) do
 
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
 
   create_table "availabilities", force: :cascade do |t|
     t.date     "start_date"
@@ -85,7 +83,6 @@ ActiveRecord::Schema.define(version: 20171130151317) do
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
-
 
   add_foreign_key "availabilities", "users", column: "sitter_id"
   add_foreign_key "book_dogs", "bookings"
