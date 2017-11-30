@@ -20,7 +20,7 @@
               <% end %>
             </li>
             <li>
-              <%= link_to "#" do %>
+              <%= link_to root_path do %>
                 <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
               <% end %>
             </li>
@@ -34,9 +34,9 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
+      <%= link_to t(".sign_in", default: "Log in"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_up", default: "Sign up"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to t(".sign_up", default: "Become a sitter"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to t(".sign_up", default: "Sign_up"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
 
@@ -63,10 +63,21 @@
         </li>
       </ul>
        <% else %>
-       <ul>
-         <li><%= link_to t(".sign_up", default: "Become a sitter"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-         <li><%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-         <li><%= link_to t(".sign_up", default: "Sign_up"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li>
+          <%= link_to profile_path do %>
+            <i class="fa fa-user"></i> <%= t(".sign_in", default: "Log in") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_user_registration_path do %>
+            <i class="fa fa-user-plus"></i>  <%= t(".sign_up", default: "Sign up") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_user_registration_path do %>
+            <i class="fa fa-heart"></i>  <%= t(".sign_up", default: "Become a sitter") %>
+          <% end %>
+        </li>
       <% end %>
       </ul>
     </div>
