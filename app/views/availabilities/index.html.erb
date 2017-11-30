@@ -1,0 +1,6 @@
+<h1>Availabilities#index</h1>
+<% @availabilities.each do |availability| %>
+<%= availability.start_date%> to <%= availability.end_date%> <%= link_to 'Destroy',  availability,  method: :delete, data: { confirm: 'Are you sure?' } %>
+<br />
+<% end %>
+
