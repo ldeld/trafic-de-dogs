@@ -5,14 +5,17 @@
 
     <div class="search-form-bar-input-wrapper">
       <div class="search-form-bar">
+        <div class="form-group">
        <form class="form-inline" action="/sitters" method="get">
-        <label for="city">City: </label>
-        <input type="text" name="city" id="city">
+        <label class="label" for="city">City</label>
+        <input class="form-control mb-2 mr-sm-2 mb-sm-0" type="text" name="city">
 
-        <label for="date">Date: </label>
-        <input type="text"  id="date">
+        <label class="label" for="date">Date
+        <input class="form-control mb-2 mr-sm-2 mb-sm-0" type="text"  id="datepicker"></label>
 
-        <input type="submit" class="btn btn-success" value="Search">
+        <button type="submit" class="btn btn-primary left-margin-button">Search</button>
+      </div>
+
       </form>
     </div>
   </div>

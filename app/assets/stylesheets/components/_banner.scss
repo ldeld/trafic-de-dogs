@@ -27,3 +27,19 @@
 form {
   color: black
 }
+
+.label{
+  font-weight:normal;
+  color:#ddd;
+  font-size:20px;
+  padding-left:15px;
+  padding-right:2px;
+}
+
+.label:first-child{
+  padding-left:0px;
+}
+
+.left-margin-button{
+  margin-left:5px;
+}
