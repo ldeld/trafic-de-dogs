@@ -10,7 +10,23 @@
           <%= f.error_notification %>
 
           <div class="form-inputs">
-            <%= f.input :email, required: true, autofocus: true %>
+
+            <%= f.input :photo, class: "form-space" %>
+            <%= f.input :photo_cache, as: :hidden %>
+
+            <%= f.input :first_name, required: true, autofocus: true %>
+
+            <%= f.input :last_name, required: true, class: "form-space" %>
+
+            <%= f.input :email, required: true, class: "form-space" %>
+
+            <%= f.input :city, required: true, class: "form-space" %>
+
+            <%= f.input :address, required: true, class: "form-space" %>
+
+            <%= f.input :accomodation, required: true, class: "form-space" %>
+
+            <%= f.text_area :description, required: true, class: "form-control" %>
 
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
               <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
