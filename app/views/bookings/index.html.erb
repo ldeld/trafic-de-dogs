@@ -20,15 +20,17 @@
           </div>
           <img src="http://www.shibainupup.com/wp-content/uploads/awpcp/thumbs/img_20170528_141457-83a3d553-primary.jpg" class="avatar">
           <div class="message-dog">
-            <h3><%= Dog.where(owner_id: current_user.id).name %></h3>
+            <% booking.dogs.each do |dog| %>
+              <a href="#"><%= dog.name %></a>
+            <% end %>
           </div>
           <div class="message-price"><h3>8€</h3></div>
           <div class="message-status">
-          <% if booking.end_date.future? %>
-            <p class="accepted">To come</p>
-          <% else %>
-            <p class="done">Done</p></div>
-          <% end %>
+          <%# if booking.end_date.future? %>
+            <!-- <p class="accepted">To come</p> -->
+          <%# else %>
+            <!-- <p class="done">Done</p></div> -->
+          <%# end %>
         </li>
       <% end %>
     </ul>

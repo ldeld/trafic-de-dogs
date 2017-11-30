@@ -11,7 +11,8 @@ class SittersController < ApplicationController
   end
 
   def show
-    @booking = Booking.new
+    @booking = Booking.new(owner: current_user, sitter: @sitter)
+    # @bookdog = BookDog.new(booking: @booking)
   end
 
   private

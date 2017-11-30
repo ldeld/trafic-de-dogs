@@ -17,8 +17,9 @@
         <p> Day care: <strong>20€</strong> </p>
         <p> Overnight stay: <strong>30€</strong> </p>
 
-        <%= simple_form_for [@sitter, @booking], url: "/sitters/#{@sitter.id}/bookings", method: :post do |f| %>
-        <%= f.button :submit, 'Book this sitter', class: "btn btn-primary" %>
+        <%= simple_form_for [@sitter, @booking] do |f| %>
+          <%= f.input :dog_ids, collection: current_user.dogs %>
+          <%= f.button :submit, 'Book this sitter', class: "btn btn-primary" %>
         <% end %>
       </div>
     </div>
