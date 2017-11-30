@@ -3,6 +3,11 @@
 <h3>This is your profile</h3>
 <%= link_to "Edit", edit_user_registration_path, class: "btn btn-primary" %>
 
+<% if current_user.type %>
+  <p> You are a dog sitter </p>
+<% else %>
+  <%= link_to "Become a sitter", become_sitter_path, class: "btn btn-primary" %>
+<% end %>
 <ul>
   <li> Name: <%= current_user.first_name %> <%= current_user.last_name %></li>
   <li> Address: <%= current_user.address %></li>
@@ -25,7 +30,7 @@
           <h4><%= dog.name %></h4>
           <p><%= dog.breed %></p>
           <p><%= dog.age %> ans </p>
-      <%= link_to "Edit #{dog.name}'s profile", edit_dog_path(dog), class: "btn btn-primary" %>
+          <%= link_to "Edit #{dog.name}'s profile", edit_dog_path(dog), class: "btn btn-primary" %>
         </div>
       </div>
       <% end %>
