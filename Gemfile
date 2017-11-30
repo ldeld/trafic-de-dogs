@@ -23,6 +23,8 @@ gem 'carrierwave', '~> 0.11.2'
 
 gem "coffee-rails"
 gem "gmaps4rails"
+gem 'bootstrap-datepicker-rails'
+
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
