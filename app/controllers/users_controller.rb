@@ -13,6 +13,12 @@ class UsersController < ApplicationController
   def profile
   end
 
+  def become_sitter
+    current_user.becomes! Sitter
+    current_user.save
+    redirect_to profile_path
+  end
+
   private
 
   def find_user
