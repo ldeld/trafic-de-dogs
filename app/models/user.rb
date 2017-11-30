@@ -5,8 +5,9 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :address, presence: true
   validates :city, presence: true
+  validates :photo, presence: true
 
-  mount_uploader :photo, PhotoUploader
+
 
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
