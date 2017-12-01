@@ -20,6 +20,6 @@ Dog.create!(user_id: 2, name: "natadoggo", age: 11, vaccines: "yep", description
 Dog.create!(user_id: 3, name: "gabe", age: 75, vaccines: "no", description: "superdog supermeme", breed: "caniche", photo: "dog1_jg64af")
 Dog.create!(user_id: 2, name: "babydog", age: 1, vaccines: "not yet", description: "pupper", breed: "labrador", photo: "dog1_jg64af")
 
-Booking.create!(owner_id: 2, sitter_id: 3, start_date: Date.strptime("14/07/2018", "%d/%m/%Y"), end_date: Date.strptime("15/07/2018", "%d/%m/%Y"))
-Booking.create!(owner_id: 2, sitter_id: 4, start_date: Date.strptime("12/06/2018", "%d/%m/%Y"), end_date: Date.strptime("13/06/2018", "%d/%m/%Y"))
-Booking.create!(owner_id: 2, sitter_id: 5, start_date: Date.strptime("11/11/2017", "%d/%m/%Y"), end_date: Date.strptime("13/11/2017", "%d/%m/%Y"))
+Booking.create!(owner_id: 2, sitter_id: 3, start_date: Date.strptime("14/07/2018", "%d/%m/%Y"), end_date: Date.strptime("15/07/2018", "%d/%m/%Y"), status: "pending")
+Booking.create!(owner_id: 2, sitter_id: 4, start_date: Date.strptime("12/06/2018", "%d/%m/%Y"), end_date: Date.strptime("13/06/2018", "%d/%m/%Y"), status: "pending")
+Booking.create!(owner_id: 2, sitter_id: 5, start_date: Date.strptime("11/11/2017", "%d/%m/%Y"), end_date: Date.strptime("13/11/2017", "%d/%m/%Y"), status: "pending")

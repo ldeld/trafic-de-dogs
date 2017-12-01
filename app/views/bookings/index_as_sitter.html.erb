@@ -2,17 +2,17 @@
 
 <div class="container">
   <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-    <h4>Here are your bookings:</h4>
+    <h4>Here are your bookings as a sitter:</h4>
     <div class="tabs">
-      <%= link_to "As an owner", "#", class: "tab active" %>
-      <%= link_to "As a sitter", bookings_as_sitter_path, class: "tab" %>
+      <%= link_to "As an owner", bookings_path, class: "tab" %>
+      <%= link_to "As a sitter", "#", class: "tab active" %>
     </div>
     <ul class="inbox">
       <% @bookings.each do |booking| %>
         <li class="message">
           <img src="http://www.femalefirst.co.uk/image-library/square/500/d/dave-franco---wi07-13.jpg" class="avatar">
           <div class="message-name">
-            <h3><%= booking.sitter.first_name %></h3>
+            <h3><%= booking.owner.first_name %></h3>
           </div>
           <div class="message-dates">
             <h3>From <%= booking.start_date %></h3>
@@ -26,7 +26,12 @@
           </div>
           <div class="message-price"><h3>8€</h3></div>
           <div class="message-status">
+          <% if booking.status == "pending" %>
+            <%= link_to "Accept", "as_sitter/#{booking.id}/accept", class: "btn btn-success" %>
+            <%= link_to "Reject", "#{booking.id}/reject", class: "btn btn-danger" %>
+          <% else %>
             <%= booking.status %>
+          <% end %>
           </div>
           <%# if booking.end_date.future? %>
             <!-- <p class="accepted">To come</p> -->

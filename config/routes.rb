@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
   get '/bookings', to: 'bookings#index'
+  get '/bookings/as_sitter', to: 'bookings#index_as_sitter'
+  get '/bookings/as_sitter/:id/accept', to: 'bookings#accept'
+  get '/bookings/as_sitter/:id/reject', to: 'bookings#reject'
   get '/availabilities', to: 'availabilities#index'
   get '/profile', to: 'users#profile'
   get '/become_sitter', to: 'users#become_sitter'
