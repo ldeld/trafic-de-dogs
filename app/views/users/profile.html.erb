@@ -53,6 +53,24 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="photo-sitter">
+      <% if current_user.type %>
+        <div class="col-xs-3 col-sm-3">
+          <%= simple_form_for(current_user) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :photo_card, label: 'Your card photo'  %>
+            <%= f.input :photo_card_cache, as: :hidden %>
+          </div>
+        </div>
+          <div class="col-xs-3 col-sm-3">
+            <%= f.submit "Add photo",class: "btn btn-primary left-button" %>
+          </div>
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+
   <div class="border"></div>
 
   <div class="row">

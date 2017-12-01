@@ -1,8 +1,12 @@
 class BookingsController < ApplicationController
-  # before_action :find_user, except: [:create]
+  before_action :find_booking, only: [:accept, :reject]
 
   def index
     @bookings = Booking.where(owner_id: current_user.id).sort {|booking| booking.date}.reverse!
+  end
+
+  def index_as_sitter
+    @bookings = Booking.where(sitter_id: current_user.id)
   end
 
   def new
@@ -11,7 +15,6 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-
     params[:booking][:dog_ids].each do |dog_id|
       BookDog.create!(booking: @booking, dog_id: dog_id) if dog_id.present?
     end
@@ -22,15 +25,28 @@ class BookingsController < ApplicationController
     end
   end
 
-  def destroy
+  def accept
+    @booking.status = "accepted"
+    @booking.save
+    redirect_to bookings_as_sitter_path
+  end
+
+  def reject
+    @booking.status = "rejected"
+    @booking.save
+    redirect_to bookings_as_sitter_path
   end
 
   private
-
+    
   def booking_params
-    params
-      .require(:booking)
-      .permit(:date)
-      .merge(sitter_id: params[:sitter_id], owner_id: current_user.id)
+  params
+    .require(:booking)
+    .permit(:date)
+    .merge(sitter_id: params[:sitter_id], owner_id: current_user.id)
+  end
+
+  def find_booking
+    @booking = Booking.find(params[:id])
   end
 end
