@@ -28,7 +28,7 @@
           <% if current_user.type %>
             <div class="col-xs-3 col-sm-9">
               <%= image_tag "sitter.png", :class => "avatar-bordered" %>
-              <p class="sitter-body"> You are a dog sitter </p>
+              <%= link_to "Add availabilities", new_availability_path, class: "btn btn-primary btn-sitter" %>
             </div>
           <% else %>
           <div class="col-xs-3 col-sm-3">
