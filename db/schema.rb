@@ -78,8 +78,8 @@ ActiveRecord::Schema.define(version: 20171130151317) do
     t.string   "type"
     t.float    "latitude"
     t.float    "longitude"
-    t.string   "photo"
     t.string   "city"
+    t.string   "photo"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
