@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   before_action :find_booking, only: [:accept, :reject]
 
   def index
-    @bookings = Booking.where(owner_id: current_user.id) #.sort {|booking| booking.start_date}.reverse!
+    @bookings = Booking.where(owner_id: current_user.id).sort {|booking| booking.date}.reverse!
   end
 
   def index_as_sitter
@@ -14,9 +14,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    # p params
-    # binding.pry
-    @booking = Booking.new(sitter_id: params[:sitter_id], owner_id: current_user.id, start_date: Date.strptime("12/06/2018", "%d/%m/%Y"), end_date: Date.strptime("13/06/2018", "%d/%m/%Y"), status: "pending")
+    @booking = Booking.new(booking_params)
     params[:booking][:dog_ids].each do |dog_id|
       BookDog.create!(booking: @booking, dog_id: dog_id) if dog_id.present?
     end
@@ -40,6 +38,13 @@ class BookingsController < ApplicationController
   end
 
   private
+    
+  def booking_params
+  params
+    .require(:booking)
+    .permit(:date)
+    .merge(sitter_id: params[:sitter_id], owner_id: current_user.id)
+  end
 
   def find_booking
     @booking = Booking.find(params[:id])

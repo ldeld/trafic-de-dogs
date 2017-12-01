@@ -18,6 +18,7 @@
         <p> Overnight stay: <strong>30€</strong> </p>
 
         <%= simple_form_for [@sitter, @booking] do |f| %>
+          <%= f.input :date, as: :date, html5: true, class: "form-space"  %>
           <%= f.collection_check_boxes :dog_ids, current_user.dogs, :id, :name  %>
           <%= f.button :submit, 'Book this sitter', class: "btn btn-primary" %>
         <% end %>
