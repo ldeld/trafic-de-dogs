@@ -4,149 +4,152 @@
     <div class="cards">
       <div class="row" style="width: 100%">
         <% @sitters.each do |sitter| %>
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="card">
-              <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-                           url('<%= image_path 'https://static3.shop033.com/resources/18/160536/picture/2E/85135150.jpg', height: 180, width: 370, crop: :fill %>')">
-                <span class="card-category"><%= sitter.city.upcase %></span>
-                <div class="card-title">
-                  <h2> <%= sitter.first_name %> </h2>
-                </div>
-                <img class="card-user avatar avatar-large" src="http://www.qygjxz.com/data/out/190/6179593-profile-pics.jpg">
-                <%= link_to "", sitter_path(sitter), class: "card-link" %>
-              </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="card">
+            <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+            url('<%= image_path 'https://static3.shop033.com/resources/18/160536/picture/2E/85135150.jpg', height: 180, width: 370, crop: :fill %>')">
+            <span class="card-category"><%= sitter.city.upcase %></span>
+            <div class="card-title">
+              <h2> <%= sitter.first_name %> </h2>
             </div>
+            <img class="card-user avatar avatar-large" src="http://www.qygjxz.com/data/out/190/6179593-profile-pics.jpg">
+            <%= link_to "", sitter_path(sitter), class: "card-link" %>
           </div>
-        <% end %>
+        </div>
       </div>
+      <% end %>
     </div>
-  <div id="map"></div>
   </div>
+  <div id="map"></div>
+</div>
 </div>
 
-  <script>
-      function initMap() {
-        var uluru = {lat: -25.363, lng: 131.044};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 52.5206, lng: 13.4098},
-          scrollwheel: false,
-          zoom: 8
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
-    </script>
+<script>
+  function initMap() {
+    var uluru = {lat: -25.363, lng: 131.044};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 52.5206, lng: 13.4098},
+      scrollwheel: false,
+      zoom: 8
+    });
+    var marker = new google.maps.Marker({
+      position: uluru,
+      map: map
+    });
+  }
+</script>
     <!-- <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap">
   </script> -->
 
-<% content_for(:after_js) do %>
-  <%= javascript_tag do %>
-
-    var styles = [
-    {
+  <% content_for(:after_js) do %>
+    <%= javascript_tag do %>
+      var styles = [
+      {
         "featureType": "administrative",
         "elementType": "labels.text.fill",
         "stylers": [
-            {
-                "color": "#444444"
-            }
+        {
+          "color": "#444444"
+        }
         ]
-    },
-    {
+      },
+      {
         "featureType": "landscape",
         "elementType": "all",
         "stylers": [
-            {
-                "color": "#f2f2f2"
-            }
+        {
+          "color": "#f2f2f2"
+        }
         ]
-    },
-    {
+      },
+      {
         "featureType": "poi",
         "elementType": "all",
         "stylers": [
-            {
-                "visibility": "off"
-            }
+        {
+          "visibility": "off"
+        }
         ]
-    },
-    {
+      },
+      {
         "featureType": "poi.business",
         "elementType": "geometry.fill",
         "stylers": [
-            {
-                "visibility": "on"
-            }
+        {
+          "visibility": "on"
+        }
         ]
-    },
-    {
+      },
+      {
         "featureType": "road",
         "elementType": "all",
         "stylers": [
-            {
-                "saturation": -100
-            },
-            {
-                "lightness": 45
-            }
+        {
+          "saturation": -100
+        },
+        {
+          "lightness": 45
+        }
         ]
-    },
-    {
+      },
+      {
         "featureType": "road.highway",
         "elementType": "all",
         "stylers": [
-            {
-                "visibility": "simplified"
-            }
+        {
+          "visibility": "simplified"
+        }
         ]
-    },
-    {
+      },
+      {
         "featureType": "road.arterial",
         "elementType": "labels.icon",
         "stylers": [
-            {
-                "visibility": "off"
-            }
+        {
+          "visibility": "off"
+        }
         ]
-    },
-    {
+      },
+      {
         "featureType": "transit",
         "elementType": "all",
         "stylers": [
-            {
-                "visibility": "off"
-            }
+        {
+          "visibility": "off"
+        }
         ]
-    },
-    {
+      },
+      {
         "featureType": "water",
         "elementType": "all",
         "stylers": [
-            {
-                "color": "#b4d4e1"
-            },
-            {
-                "visibility": "on"
-            }
+        {
+          "color": "#b4d4e1"
+        },
+        {
+          "visibility": "on"
+        }
         ]
-    }
-];
+      }
+      ];
 
     var handler = Gmaps.build('Google');
-handler.buildMap({
-  provider: {
+    var image = 'https://image.ibb.co/hXwCqG/paw.png';
+    handler.buildMap({
+    provider: {
     styles: styles}, internal: { id: 'map' } }, function() {
       markers = handler.addMarkers(<%= raw @markers.to_json %>);
-      handler.bounds.extendWith(markers);
-      handler.fitMapToBounds();
-      if (markers.length == 0) {
-        handler.getMap().setZoom(2);
-      } else if (markers.length == 1) {
-        handler.getMap().setZoom(14);
-      }
+      markers.forEach(function(element) {
+        element.serviceObject.icon = image;
+      });
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+    if (markers.length == 0) {
+    handler.getMap().setZoom(2);
+    } else if (markers.length == 1) {
+    handler.getMap().setZoom(14);
+    }
     });
   <% end %>
 <% end %>
