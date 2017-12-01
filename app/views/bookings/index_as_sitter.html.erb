@@ -4,8 +4,8 @@
   <div class="col-xs-12 col-sm-10 col-sm-offset-1">
     <h4>Here are your bookings as a sitter:</h4>
     <div class="tabs">
-      <a href="#" class="tab active">Sitters</a>
-      <a href="#" class="tab">Owners</a>
+      <%= link_to "As an owner", bookings_path, class: "tab" %>
+      <%= link_to "As a sitter", "#", class: "tab active" %>
     </div>
     <ul class="inbox">
       <% @bookings.each do |booking| %>
@@ -26,6 +26,13 @@
           </div>
           <div class="message-price"><h3>8€</h3></div>
           <div class="message-status">
+          <% if booking.status == "pending" %>
+            <%= link_to "Accept", "as_sitter/#{booking.id}/accept", class: "btn btn-success" %>
+            <%= link_to "Reject", "#{booking.id}/reject", class: "btn btn-danger" %>
+          <% else %>
+            <%= booking.status %>
+          <% end %>
+          </div>
           <%# if booking.end_date.future? %>
             <!-- <p class="accepted">To come</p> -->
           <%# else %>

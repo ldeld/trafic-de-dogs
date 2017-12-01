@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  # before_action :find_user, except: [:create]
+  before_action :find_booking, only: [:accept, :reject]
 
   def index
     @bookings = Booking.where(owner_id: current_user.id) #.sort {|booking| booking.start_date}.reverse!
@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
   def create
     # p params
     # binding.pry
-    @booking = Booking.new(sitter_id: params[:sitter_id], owner_id: current_user.id, start_date: Date.strptime("12/06/2018", "%d/%m/%Y"), end_date: Date.strptime("13/06/2018", "%d/%m/%Y"))
+    @booking = Booking.new(sitter_id: params[:sitter_id], owner_id: current_user.id, start_date: Date.strptime("12/06/2018", "%d/%m/%Y"), end_date: Date.strptime("13/06/2018", "%d/%m/%Y"), status: "pending")
     params[:booking][:dog_ids].each do |dog_id|
       BookDog.create!(booking: @booking, dog_id: dog_id) if dog_id.present?
     end
@@ -27,8 +27,21 @@ class BookingsController < ApplicationController
     end
   end
 
-  def destroy
+  def accept
+    @booking.status = "accepted"
+    @booking.save
+    redirect_to bookings_as_sitter_path
   end
 
+  def reject
+    @booking.status = "rejected"
+    @booking.save
+    redirect_to bookings_as_sitter_path
+  end
 
+  private
+
+  def find_booking
+    @booking = Booking.find(params[:id])
+  end
 end
