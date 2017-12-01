@@ -1,3 +1,10 @@
-<h3> Edit <%= @dog.name %>'s profile </h3>
 
-<%= render partial: 'dog_form', locals: {button_text: "Save changes"} %>
+<% if  current_user.dogs.include? @dog %>
+  <h3> Edit <%= @dog.name %>'s profile </h3>
+  <%= render partial: 'dog_form', locals: {button_text: "Save changes"} %>
+<% else %>
+  <div style="height: 80vh">
+    <h3>Error</h3>
+    <h2>You cannot edit this profile because you are not the owner</h2>
+  </div>
+<% end %>
