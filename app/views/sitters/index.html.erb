@@ -6,13 +6,12 @@
         <% @sitters.each do |sitter| %>
           <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="card">
-              <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-                           url url('<%= cl_image_path sitter.photo_card, height: 300, width: 400, crop: :fill %>')">
+              <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path sitter.photo_card, height: 300, width: 400, crop: :fill %>')">
                 <span class="card-category"><%= sitter.city.upcase %></span>
+                 <%= cl_image_tag sitter.photo, height: 35, width: 25, crop: :fill, gravity: :face, class: "avatar avatar-sitter" %>
                 <div class="card-title">
                   <h2> <%= sitter.first_name %> </h2>
                 </div>
-                <img class="card-user avatar avatar-large" src="http://www.qygjxz.com/data/out/190/6179593-profile-pics.jpg">
                 <%= link_to "", sitter_path(sitter), class: "card-link" %>
               </div>
             </div>

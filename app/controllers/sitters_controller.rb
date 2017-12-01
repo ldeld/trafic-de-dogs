@@ -28,7 +28,7 @@ class SittersController < ApplicationController
   end
 
   def sitter_params
-    params.require(:sitter).permit(:photo_card)
+    params.require(:sitter).permit(:photo_card, :photo_card_cache)
   end
 
 end

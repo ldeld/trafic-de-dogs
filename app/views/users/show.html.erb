@@ -9,7 +9,7 @@
 
     <div class="col-xs-3 col-sm-6">
     <div class="description-user">
-    <h4 class="user-name">Bonjour, je m'appelle <%= @user.first_name %> !</h4>
+    <h4 class="user-name">Bonjour, je m'appelle <%= @user.first_name.upcase %> !</h4>
 
     <div class="rating">
             <i class="fa fa-star"></i>
@@ -19,7 +19,7 @@
             <i class="fa fa-star"></i>
     </div>
 
-    <p><%= @user.city %></p>
+    <p><%= @user.city.upcase %></p>
     <p> Membre depuis 2017</p>
     </div>
   </div>

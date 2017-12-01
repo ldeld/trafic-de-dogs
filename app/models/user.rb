@@ -9,6 +9,7 @@ class User < ApplicationRecord
 mount_uploader :photo, PhotoUploader
 mount_uploader :photo_card, PhotoUploader
 
+
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
   # Include default devise modules. Others available are:
