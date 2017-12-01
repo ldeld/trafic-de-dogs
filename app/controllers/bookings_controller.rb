@@ -5,6 +5,10 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(owner_id: current_user.id) #.sort {|booking| booking.start_date}.reverse!
   end
 
+  def index_as_sitter
+    @bookings = Booking.where(sitter_id: current_user.id)
+  end
+
   def new
     @booking = Booking.new
   end
