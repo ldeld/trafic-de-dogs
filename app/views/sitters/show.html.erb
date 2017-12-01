@@ -6,6 +6,7 @@
       <div class="sitter-card sitter-info">
         <%= cl_image_tag @sitter.photo, class: "avatar-large" %>
         <h2><%= @sitter.first_name %></h2>
+        <%= link_to "Full profile", user_path(@sitter) %>
         <p>About this sitter:</p>
         <p> <%= @sitter.description %></p>
       </div>
