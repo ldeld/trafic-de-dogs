@@ -6,4 +6,5 @@ class Booking < ApplicationRecord
 
   validates :owner_id, presence: true
   validates :sitter_id, presence: true
+  validates :date, presence: true
 end

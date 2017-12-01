@@ -11,7 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 
-ActiveRecord::Schema.define(version: 20171201112754) do
+ActiveRecord::Schema.define(version: 20171201115306) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,10 +37,9 @@ ActiveRecord::Schema.define(version: 20171201112754) do
   create_table "bookings", force: :cascade do |t|
     t.integer  "owner_id"
     t.integer  "sitter_id"
-    t.date     "start_date"
-    t.date     "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date     "date"
     t.string   "status"
     t.index ["owner_id"], name: "index_bookings_on_owner_id", using: :btree
     t.index ["sitter_id"], name: "index_bookings_on_sitter_id", using: :btree
