@@ -1,4 +1,8 @@
-<h3>New availability?</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="container-form-login">
+        <h3>New availability?</h3>
 <%= simple_form_for([@user, @availability]) do |f| %>
   <div class="form-inputs">
     <%= f.input :start_date, as: :date, html5: true, class: "form-space"  %>
@@ -9,3 +13,4 @@
     <%= f.submit "Add", class: "btn btn-primary" %>
   </div>
 <% end %>
+</div></div></div></div>

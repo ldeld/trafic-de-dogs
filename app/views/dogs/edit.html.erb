@@ -1,4 +1,7 @@
-
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="container-form-login">
 <% if  current_user.dogs.include? @dog %>
   <h3> Edit <%= @dog.name %>'s profile </h3>
   <%= render partial: 'dog_form', locals: {button_text: "Save changes"} %>
@@ -8,3 +11,4 @@
     <h2>You cannot edit this profile because you are not the owner</h2>
   </div>
 <% end %>
+</div></div></div></div>
