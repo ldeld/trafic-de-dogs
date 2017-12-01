@@ -15,6 +15,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.status = "pending"
     params[:booking][:dog_ids].each do |dog_id|
       BookDog.create!(booking: @booking, dog_id: dog_id) if dog_id.present?
     end
@@ -38,7 +39,7 @@ class BookingsController < ApplicationController
   end
 
   private
-    
+
   def booking_params
   params
     .require(:booking)
