@@ -7,11 +7,17 @@
   box-shadow: 1px 1px 2px #DDD;
   // height: 60vh;
   h2 { margin: 10px; }
+  position: relative;
 }
 
-.sitter-info {
-
+.avatar-sitter {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 40px;
+  border-radius: 50%;
 }
+
 
 .sitter-booking {
   .new-booking { padding: 20px; }

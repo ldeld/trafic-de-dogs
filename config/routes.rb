@@ -18,7 +18,8 @@ Rails.application.routes.draw do
   resources :dogs, only: [:show, :edit, :update, :destroy, :new, :create]
   resources :availabilities, only: [:destroy, :new, :create]
 
-  resources :sitters, only: [:index, :show] do
+
+  resources :sitters, only: [:index, :show, :update] do
     resources :bookings, only: [:new, :create]
     resources :availabilities, only: [:index]
   end
