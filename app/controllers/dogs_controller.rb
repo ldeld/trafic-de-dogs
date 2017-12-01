@@ -32,7 +32,7 @@ class DogsController < ApplicationController
 
   def update
     @dog.update_attributes(dog_params)
-    redirect_to user_dogs_path(current_user)
+    redirect_to profile_path
   end
 
   def destroy
