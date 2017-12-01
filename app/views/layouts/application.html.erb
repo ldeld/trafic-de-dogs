@@ -23,7 +23,8 @@
     <%= javascript_include_tag 'application' %>
     <script>
       $('#datepicker').datepicker({
-           autoclose: true
+           autoclose: true,
+           format: "dd/mm/yyyy"
        });
   </script>
     <%= yield(:after_js) %>
