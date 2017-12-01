@@ -1,5 +1,5 @@
 class SittersController < ApplicationController
-  before_action :find_sitter, only: [:show]
+  before_action :find_sitter, only: [:show, :update]
   def index
     @sitters = Sitter.near(params[:city], 10)
 
@@ -10,6 +10,12 @@ class SittersController < ApplicationController
     end
   end
 
+  def update
+    @sitter.update(sitter_params)
+    redirect_to profile_path(@sitter)
+  end
+
+
   def show
     @booking = Booking.new(owner: current_user, sitter: @sitter)
     # @bookdog = BookDog.new(booking: @booking)
@@ -19,6 +25,10 @@ class SittersController < ApplicationController
 
   def find_sitter
     @sitter = Sitter.find(params[:id])
+  end
+
+  def sitter_params
+    params.require(:sitter).permit(:photo_card)
   end
 
 end
